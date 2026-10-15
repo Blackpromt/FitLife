@@ -5,7 +5,7 @@ ML_PER_LITER = 1000
 # Приветствие и сбор данных пользователя.
 print(
     'Добро пожаловать в FitLife! Я помогу рассчитать '
-    'индекс массы тела и дневную норму воды'
+    'индекс массы тела и дневную норму воды',
 )
 
 user_name = input('Как вас зовут? ')
@@ -16,15 +16,14 @@ user_height = float(input('Введите рост в метрах (формат
 
 # Расчёт индекса массы тела.
 def calculate_bmi(weight, height):
-    bmi = round(weight / (height ** 2), 1)
-    return bmi
+    """Рассчитать индекс массы тела по весу и росту."""
+    return round(weight / (height ** 2), 1)
 
 
 # Расчёт суточной нормы воды в литрах.
 def calculate_water(weight):
-    water_ml = weight * WATER_PER_KG
-    water_l = water_ml / ML_PER_LITER
-    return water_l
+    """Рассчитать суточную норму воды в литрах по весу."""
+    return weight * WATER_PER_KG / ML_PER_LITER
 
 
 # Получение результатов расчётов.
